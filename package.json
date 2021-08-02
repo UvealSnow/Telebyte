@@ -1,0 +1,19 @@
+{
+  "name": "telebyte-2021",
+  "private": true,
+  "scripts": {
+    "dev": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "sass-loader": "^10.1.1",
+    "tailwindcss": "^2.2.7"
+  }
+}
