@@ -1,5 +1,5 @@
 <template>
-  <div class="header__cta flex">
+  <div class="my-3 md:my-0 flex">
     <icon :image="icon" size="medium" class="mr-3 ml-6" />
     <div class="flex flex-col">
       <p class="text-sm text-white font-bold pb-1" v-text="title" />

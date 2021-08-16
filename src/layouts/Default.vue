@@ -1,15 +1,6 @@
 <template>
-  <div class="layout font-body">
+  <div class="layout font-body bg-red-300 min-h-screen">
     <page-header />
-    <!-- <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header> -->
     <slot/>
   </div>
 </template>
@@ -32,8 +23,3 @@ query {
 }
 </static-query>
 
-<style>
-.layout {
-  @apply bg-red-300 h-screen;
-}
-</style>
