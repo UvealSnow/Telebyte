@@ -7,7 +7,7 @@
         </g-link>
       </div>
 
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col text-white md:flex-row">
         <header-cta class="ml-8" icon="phone-incoming" title="Llámanos">
           <a class="text-xs text-white" href="tel:+524441983512">+52 444 198 3512</a>
         </header-cta>

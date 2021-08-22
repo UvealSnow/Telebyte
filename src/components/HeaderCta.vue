@@ -4,7 +4,7 @@
       <icon :image="icon" size="medium" :color="color" />
     </div>
     <div class="flex flex-col flex-grow">
-      <p v-if="title" class="text-sm text-white font-bold pb-1" v-text="title" />
+      <p v-if="title" class="text-sm font-bold pb-1" v-text="title" />
       <slot />
     </div>
   </div>
