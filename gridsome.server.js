@@ -5,9 +5,13 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+
+
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
+  api.loadSource((store) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+    // store.addMetadata('socialNetworks', socialNetworks);
+    // store.addMetadata('john', 'doe');
   })
 
   api.createPages(({ createPage }) => {

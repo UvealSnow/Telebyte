@@ -13,9 +13,19 @@ const postcssPlugins = [
 
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')));
 
+const socialNetworks = [
+  { icon: 'facebook', linkTo: 'https://facebook.com' },
+  { icon: 'twitter', linkTo: 'https://twitter.com' },
+  { icon: 'instagram', linkTo: 'https://instagram.com' },
+];
+
 module.exports = {
   siteName: 'Telebyte S.A. de C.V.',
   siteDescription: 'Con más de 30 años de experiencia, Telebyte S.A. de C.V. ofrece el mejor servicio disponible en la región.',
+
+  metadata: {
+    socialNetworks,
+  },
 
   plugins: [
     //
