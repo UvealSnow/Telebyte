@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex flex-col md:flex-row justify-center font-light">
-    <div class="footer__contact relative md:absolute flex flex-row container mx-auto bg-white">
+    <div class="footer__contact shadow-xl relative md:absolute flex flex-row container mx-auto bg-white">
       <div class="footer__contact--left py-12 px-8 w-full lg:w-3/5">
         <h3 class="text-2xl text-black">
           <span class="font-bold">Envíanos</span> un mensaje
