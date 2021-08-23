@@ -1,7 +1,7 @@
 <template>
   <component
     :is="require(`~/assets/img/icons/${image}.svg`)"
-    :class="`svg-icon svg-icon--size-${size}`"
+    :class="`svg-icon svg-icon--size-${size} svg-icon--${color}`"
   />
 </template>
 
@@ -17,6 +17,10 @@ export default {
     size: {
       type: String,
       default: 'small',
+    },
+    color: {
+      type: String,
+      default: 'gray',
     }
   },
 };
@@ -40,6 +44,27 @@ export default {
   &--size-large {
     width: 60px;
     height: 60px;
+  }
+
+  &--gray {
+    path {
+      stroke-width: 2;
+      stroke: rgba(0, 0, 0, .35);
+    }
+  }
+
+  &--green {
+    path {
+      stroke-width: 2;
+      stroke: rgba(124, 164, 93, 1);
+    }
+  }
+
+  &--white {
+    path {
+      stroke-width: 2;
+      stroke: rgba(255, 255, 255, 1);
+    }
   }
 }
 </style>
