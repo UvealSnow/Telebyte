@@ -1,5 +1,5 @@
 <template>
-  <div id="header" class="container mx-auto flex-col py-6">
+  <div class="header container absolute mx-auto flex-col py-6">
     <div class="flex flex-col md:flex-row md:items-center">
       <div class="flex-grow">
         <g-link to="/">
@@ -66,3 +66,11 @@ query {
   }
 }
 </static-query>
+
+<style lang="scss" scoped>
+.header {
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%);
+}
+</style>

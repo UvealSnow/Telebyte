@@ -151,38 +151,43 @@ query {
 </static-query>
 
 <style lang="scss" scoped>
+$height-sm: 680px;
+$height-md: 580px;
+
 .btn {
   background-color: #7ca45d;
 }
 
 .footer {
-  min-height: 880px;
+  min-height: $height-sm;
 
   &__contact {
-    top: 70px;
-
     @screen md {
-      top: 100px;
-    }
-
-    @screen lg {
-      top: 170px;
+      bottom: -350px;
     }
   }
 
   &__veil {
     width: 100vw;
-    height: 780px;
+    height: $height-sm;
     position: absolute;
     background-color: rgba(0, 0, 0, .5);
+    
+    @screen md {
+      height: $height-md;
+    }
   }
 
   &__container {
-    height: 780px;
+    height: $height-sm;
     overflow: hidden;
     background-size: cover;
     background-position: top;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url('../assets/img/fiber.jpeg');
+    
+    @screen md {
+      height: $height-md;
+    }
   }
 
   &__left {

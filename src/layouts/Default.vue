@@ -1,7 +1,6 @@
 <template>
-  <div class="layout font-body bg-red-300 min-h-screen">
+  <div class="layout font-body min-h-screen">
     <page-header />
-    {{ $static.metadata.siteName }}
     <slot/>
     <page-footer />
   </div>
