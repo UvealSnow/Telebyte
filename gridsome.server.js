@@ -10,11 +10,27 @@
 module.exports = function (api) {
   api.loadSource((store) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    // store.addMetadata('socialNetworks', socialNetworks);
-    // store.addMetadata('john', 'doe');
-  })
+  });
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`
+      {
+        gcms {
+          projects {
+            slug
+          }
+        }
+      }
+    `);
+
+    data.gcms.projects.forEach(node => {
+      createPage({
+        path: `/projects/${node.slug}`,
+        component: './src/templates/Project.vue',
+        context: {
+          slug: node.slug,
+        },
+      });
+    });
+  });
 }

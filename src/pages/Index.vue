@@ -7,6 +7,8 @@
         <h1 class="text-white font-bold text-lg md:text-3xl lg:text-5xl">LOS MEJORES EN TELECOMUNICACIONES DE LA REGIÓN</h1>
         <a class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4" href="#">NUESTROS SERVICIOS</a>
       </div>
+
+      {{ projects }}
     </div>
   </Layout>
 </template>
@@ -15,9 +17,49 @@
 export default {
   metaInfo: {
     title: 'Inicio'
+  },
+
+  computed: {
+    projects() {
+      const { featuredProjects, regularProjects } = this.$page.gcms;
+      return [
+        ...featuredProjects,
+        ...regularProjects,
+      ].slice(0, 5);
+    },
+  },
+};
+</script>
+
+
+<page-query> 
+{
+  gcms {
+    featuredProjects: projects(where: { featured: true }, orderBy: publishedAt_DESC, first: 6) {
+      title
+      slug
+      id
+      body
+      updatedAt
+      featured
+      image {
+        url
+      }
+    }
+    regularProjects: projects(where: { featured: false }, orderBy: createdAt_DESC, first: 6) {
+      title
+      slug
+      id
+      body
+      updatedAt
+      featured
+      image {
+        url
+      }
+    }
   }
 }
-</script>
+</page-query>
 
 <style lang="scss">
 .hero {

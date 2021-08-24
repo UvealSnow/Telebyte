@@ -28,7 +28,14 @@ module.exports = {
   },
 
   plugins: [
-    //
+    {
+      use: '@gridsome/source-graphql',
+      options: {
+        url: 'https://api-us-east-1.graphcms.com/v2/cksprroxl2ulp01y25dh9e078/master',
+        fieldName: 'gcms',
+        typeName: 'gcmsTypes',
+      },
+    },
   ],
 
   css: {
