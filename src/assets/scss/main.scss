@@ -4,4 +4,12 @@
 
 @tailwind components;
 
+.subtitle {
+  @apply text-gray-300 uppercase text-xs tracking-widest;
+}
+
+.title {
+  @apply text-black uppercase text-xl mb-12;
+}
+
 @tailwind utilities;

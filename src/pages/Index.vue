@@ -8,13 +8,36 @@
         <a class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4" href="#">NUESTROS SERVICIOS</a>
       </div>
 
-      {{ projects }}
+      <!-- About us -->
+      <div class="about-us container mx-auto flex flex-col md:flex-row">
+
+      </div>
+
+      <!-- Projects -->
+      <div class="projects container mx-auto flex flex-col mt-24">
+        <p class="subtitle">galería</p>
+        <h3 class="title">trabajos recientes</h3>
+
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <project
+            v-for="(project, i) in projects"
+            :project="project"
+            :key="i"
+          />
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
 
 <script>
+import Project from '../components/Project.vue';
+
 export default {
+  components: {
+    Project,
+  },
+
   metaInfo: {
     title: 'Inicio'
   },
@@ -25,7 +48,7 @@ export default {
       return [
         ...featuredProjects,
         ...regularProjects,
-      ].slice(0, 5);
+      ].slice(0, 6);
     },
   },
 };
