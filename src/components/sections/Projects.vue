@@ -34,12 +34,44 @@ export default {
       required: true,
       default: () => ({}),
     },
+  },
 
-    projects: {
-      type: Array,
-      required: true,
-      default: () => ([]),
+  computed: {
+    projects() {
+      const { featuredProjects, regularProjects } = this.$static.gcms;
+      return [
+        ...featuredProjects,
+        ...regularProjects,
+      ].slice(0, 6);
     },
   },
 };
 </script>
+
+<static-query>
+{
+  gcms {
+    featuredProjects: projects(where: { featured: true }, orderBy: publishedAt_DESC, first: 6) {
+      slug
+      body
+      title
+      featured
+      updatedAt
+      image {
+        url
+      }
+    }
+    regularProjects: projects(where: { featured: false }, orderBy: createdAt_DESC, first: 6) {
+      title
+      slug
+      id
+      body
+      updatedAt
+      featured
+      image {
+        url
+      }
+    }
+  }
+}
+</static-query>

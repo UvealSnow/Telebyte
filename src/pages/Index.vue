@@ -3,7 +3,6 @@
     <component  
       v-for="(section, i) in $page.gcms.sections"
       v-bind:section="section"
-      v-bind:projects="projects"
       :is="section.component"
       :key="i"
     />
@@ -19,16 +18,6 @@ export default {
   metaInfo: {
     title: 'Inicio'
   },
-
-  computed: {
-    projects() {
-      const { featuredProjects, regularProjects } = this.$page.gcms;
-      return [
-        ...featuredProjects,
-        ...regularProjects,
-      ].slice(0, 6);
-    },
-  },
 };
 </script>
 
@@ -42,27 +31,6 @@ export default {
       subtitle
       component
       actionText
-    }
-    featuredProjects: projects(where: { featured: true }, orderBy: publishedAt_DESC, first: 6) {
-      slug
-      body
-      title
-      featured
-      updatedAt
-      image {
-        url
-      }
-    }
-    regularProjects: projects(where: { featured: false }, orderBy: createdAt_DESC, first: 6) {
-      title
-      slug
-      id
-      body
-      updatedAt
-      featured
-      image {
-        url
-      }
     }
   }
 }
