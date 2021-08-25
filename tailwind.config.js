@@ -2,14 +2,21 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'telebyte-green': '#7CA45D',
+      },
+    },
 
     fontFamily: {
       body: ['Rubik'],
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['first'],
+      borderWidth: ['first'],
+    },
   },
   plugins: [],
 }

@@ -5,11 +5,19 @@
 @tailwind components;
 
 .subtitle {
-  @apply text-gray-300 uppercase text-xs tracking-widest;
+  @apply text-gray-300 uppercase text-xs tracking-widest text-center;
+
+  @screen lg {
+    @apply text-left;
+  }
 }
 
 .title {
-  @apply text-black uppercase text-xl mb-12;
+  @apply text-black uppercase text-xl mb-12 text-center;
+
+  @screen lg {
+    @apply text-left;
+  }
 }
 
 @tailwind utilities;

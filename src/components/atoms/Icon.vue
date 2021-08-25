@@ -50,9 +50,20 @@ export default {
     height: 40px;
   }
 
+  &--size-xl {
+    width: 50px;
+    height: 50px;
+  }
+
   &--gray {
     path {
       stroke: rgba(0, 0, 0, .35);
+    }
+  }
+
+  &--black {
+    path {
+      stroke: rgba(0, 0, 0, 1);
     }
   }
 
