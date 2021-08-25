@@ -2,7 +2,7 @@
   <div class="layout font-body min-h-screen">
     <page-header />
     <slot/>
-    <!-- <page-footer /> -->
+    <page-footer />
   </div>
 </template>
 

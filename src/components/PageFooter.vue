@@ -1,5 +1,5 @@
 <template>
-  <div class="footer flex flex-col md:flex-row justify-center font-light">
+  <div class="footer relative flex flex-col md:flex-row justify-center font-light">
     <div class="footer__contact shadow-xl relative md:absolute flex flex-row container mx-auto bg-white">
       <div class="footer__contact--left py-12 px-8 w-full lg:w-3/5">
         <h3 class="text-2xl text-black">
@@ -161,9 +161,13 @@ $height-md: 580px;
 .footer {
   min-height: $height-sm;
 
+  @screen md {
+    margin-top: 200px;
+  }
+
   &__contact {
     @screen md {
-      bottom: -350px;
+      bottom: 400px;
     }
   }
 
