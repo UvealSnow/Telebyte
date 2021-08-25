@@ -1,42 +1,20 @@
 <template>
   <Layout>
-    <div class="hero mb-96">
-      <div class="stripe"></div>
-      <div class="hero__content absolute text-center">
-        <p class="text-gray-300 font-bold text-xs">TU ALIADO ESTRATÉGICO</p>
-        <h1 class="text-white font-bold text-lg md:text-3xl lg:text-5xl">LOS MEJORES EN TELECOMUNICACIONES DE LA REGIÓN</h1>
-        <a class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4" href="#">NUESTROS SERVICIOS</a>
-      </div>
-
-      <!-- About us -->
-      <div class="about-us container mx-auto flex flex-col md:flex-row">
-
-      </div>
-
-      <!-- Projects -->
-      <div class="projects container mx-auto flex flex-col mt-24">
-        <p class="subtitle">galería</p>
-        <h3 class="title">trabajos recientes</h3>
-
-        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <project
-            v-for="(project, i) in projects"
-            :project="project"
-            :key="i"
-          />
-        </div>
-      </div>
-    </div>
+    <component  
+      v-for="(section, i) in $page.gcms.sections"
+      v-bind:section="section"
+      v-bind:projects="projects"
+      :is="section.component"
+      :key="i"
+    />
   </Layout>
 </template>
 
 <script>
-import Project from '../components/Project.vue';
+import components from '../components/sections/index.js';
 
 export default {
-  components: {
-    Project,
-  },
+  components,
 
   metaInfo: {
     title: 'Inicio'
@@ -58,13 +36,19 @@ export default {
 <page-query> 
 {
   gcms {
-    featuredProjects: projects(where: { featured: true }, orderBy: publishedAt_DESC, first: 6) {
-      title
+    sections(orderBy: order_ASC) {
       slug
-      id
+      title
+      subtitle
+      component
+      actionText
+    }
+    featuredProjects: projects(where: { featured: true }, orderBy: publishedAt_DESC, first: 6) {
+      slug
       body
-      updatedAt
+      title
       featured
+      updatedAt
       image {
         url
       }
