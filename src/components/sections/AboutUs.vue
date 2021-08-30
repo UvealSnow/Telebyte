@@ -6,17 +6,19 @@
       <div class="about-us__accordion self-end p-8 bg-gray-100 flex flex-col w-full xl:w-1/2">
         <p class="subtitle text-gray-400">{{ section.subtitle }}</p>
         <h3 class="title">{{ section.title }}</h3>
+
+        <accordion :pages="$static.gcms.pages" />
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
 <script>
-import AccordionRow from '../AccordionRow.vue';
+import Accordion from '../Accordion.vue';
 
 export default {
   components: {
-    AccordionRow,
+    Accordion,
   },
 
   props: {
@@ -28,6 +30,18 @@ export default {
   },
 };
 </script>
+
+<static-query>
+{
+  gcms {
+    pages(orderBy: order_ASC) {
+      title
+      brief
+      slug
+    }
+  }
+}
+</static-query>
 
 <style lang="scss" scoped>
 .about-us {
