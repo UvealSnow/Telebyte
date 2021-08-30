@@ -15,7 +15,7 @@
       v-if="section.slug"
       :href="section.slug"
       v-text="section.actionText"
-      class="text-center uppercase text-xs my-6"
+      class="text-center uppercase font-bold text-xs my-6"
     />
   </div>
 </template>
