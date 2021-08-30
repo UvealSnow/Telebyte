@@ -1,8 +1,8 @@
 <template>
   <div class="layout font-body min-h-screen">
-    <page-header />
+    <page-header :contact-data="computedContactData" />
     <slot/>
-    <page-footer />
+    <page-footer :contact-data="computedContactData" />
   </div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
     PageHeader,
     PageFooter,
   },
+
+  computed: {
+    computedContactData() {
+      return this.$static.gcms.contacts[0];
+    },
+  },
 };
 </script>
 
@@ -22,6 +28,16 @@ export default {
 query {
   metadata {
     siteName
+  }
+  gcms {
+    contacts(first: 1) {
+      email
+      emailAction
+      phone
+      phoneAction
+      address
+      schedule
+    }
   }
 }
 </static-query>

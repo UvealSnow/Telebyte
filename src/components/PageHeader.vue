@@ -8,16 +8,15 @@
       </div>
 
       <div class="flex flex-col text-white md:flex-row">
-        <header-cta class="ml-8" icon="phone-incoming" title="Llámanos">
-          <a class="text-xs text-white" href="tel:+524441983512">+52 444 198 3512</a>
-        </header-cta>
-
-        <header-cta class="ml-8" icon="mail" title="Envíanos un correo">
-          <a class="text-xs text-white" href="mailto:hola@telebyte.mx">hola@telebyte.mx</a>
-        </header-cta>
-
-        <header-cta class="ml-8" icon="watch" title="Horario de atención">
-          <p class="text-xs text-white">Lun - Vie 8:00am ~ 6:00pm</p>
+        <header-cta
+          v-for="(cta, i) in ctas"
+          :icon="cta.icon"
+          :title="cta.title"
+          :key="i"
+          class="ml-8"
+        >
+          <a v-if="cta.linkTo" :href="cta.linkTo" class="text-xs text-white" v-text="contactData[cta.key]" />
+          <p v-else class="text-xs text-white" v-text="contactData[cta.key]" />
         </header-cta>
       </div>
     </div>
@@ -39,11 +38,38 @@
 import HeaderCta from '~/components/HeaderCta.vue'
 
 export default {
+  props: {
+    contactData: {
+      type: Object,
+      required: true,
+      default: () => ({}),
+    },
+  },
+  
   components: {
     HeaderCta,
   },
 
   data: () => ({
+    ctas: [
+      {
+        icon: 'mail',
+        title: 'Envíanos un correo',
+        key: 'email',
+        linkTo: 'emailAction',
+      },
+      {
+        icon: 'phone-incoming',
+        title: 'Llámanos',
+        key: 'phone',
+        linkTo: 'phoneAction',
+      },
+      {
+        icon: 'watch',
+        title: 'Horario de atención',
+        key: 'schedule',
+      },
+    ],
     links: [
       { label: 'INICIO', linkTo: '' },
       { label: 'SERVICIOS', linkTo: '' },

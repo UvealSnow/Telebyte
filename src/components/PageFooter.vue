@@ -51,8 +51,8 @@
           class="text-black py-2"
           :title="cta.title"
         >
-          <a v-if="cta.linkTo" :href="cta.linkTo" v-text="cta.subtitle" />
-          <p v-else v-text="cta.subtitle" />
+          <a v-if="cta.linkTo" :href="cta.linkTo" v-text="contactData[cta.key]" />
+          <p v-else v-text="contactData[cta.key]" />
         </header-cta>
       </div>
     </div>
@@ -75,8 +75,8 @@
             <h3 class="text-2xl uppercase text-white font-bold pb-4">contáctanos</h3>
 
             <header-cta v-for="(cta, i) in ctas" :icon="cta.icon" color="white" :key="i" class="text-white py-1">
-              <a v-if="cta.linkTo" :href="cta.linkTo" v-text="cta.subtitle" />
-              <p v-else v-text="cta.subtitle" />
+              <a v-if="cta.linkTo" :href="cta.linkTo" v-text="contactData[cta.key]" />
+              <p v-else v-text="contactData[cta.key]" />
             </header-cta>
           </div>
         </div>
@@ -93,6 +93,14 @@
 import HeaderCta from './HeaderCta.vue';
 
 export default {
+  props: {
+    contactData: {
+      type: Object,
+      required: true,
+      default: () => ({}),
+    },
+  },
+
   components: {
     HeaderCta,
   },
@@ -102,24 +110,24 @@ export default {
       {
         icon: 'map-pin',
         title: 'DIRECCIÓN',
-        subtitle: 'Cerrada Vista Hermosa #156. Fracc. Bosques de Linda Vista. Villa de Pozos. San Luis Potosí, S.L.P.',
+        key: 'address',
       },
       {
         icon: 'mail-sm',
         title: 'CORREO ELECTRONICO',
-        subtitle: 'hola@telebyte.mx',
-        linkTo: 'mailto:hola@telebyte.mx',
+        key: 'email',
+        linkTo: 'emailAction',
       },
       {
         icon: 'phone',
         title: 'NÚMERO',
-        subtitle: '+52 (444) 198 2929',
-        linkTo: 'tel:+524441982929',
+        key: 'phone',
+        linkTo: 'phoneAction',
       },
       {
         icon: 'watch-sm',
         title: 'HORARIO',
-        subtitle: 'LUN - VIE 8:00 am ~ 5:00 pm',
+        key: 'schedule',
       },
     ],
     formData: {
