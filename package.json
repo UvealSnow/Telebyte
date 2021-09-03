@@ -12,11 +12,14 @@
     "moment": "^2.29.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@tailwindcss/postcss7-compat": "^2.2.9",
+    "autoprefixer": "^9",
+    "gridsome-plugin-tailwindcss": "^4.1.1",
     "node-sass": "^6.0.1",
-    "postcss": "^8.3.6",
+    "postcss": "^7",
     "sass-loader": "^10.1.1",
-    "tailwindcss": "^2.2.7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-svg-loader": "^0.16.0"
   }
 }
