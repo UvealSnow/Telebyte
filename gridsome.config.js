@@ -5,13 +5,10 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const tailwind = require('tailwindcss');
-const purgecss = require('postcss');
 
 const postcssPlugins = [
   tailwind(),
 ];
-
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')));
 
 const socialNetworks = [
   { icon: 'facebook', linkTo: 'https://facebook.com' },
@@ -28,6 +25,16 @@ module.exports = {
   },
 
   plugins: [
+    {
+      use: "gridsome-plugin-tailwindcss",
+      // these options are optional, as they are copies of the default values...
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: false,
+        shouldTimeTravel: false
+      }
+    },
     {
       use: '@gridsome/source-graphql',
       options: {
