@@ -1,14 +1,9 @@
-# Default starter for Gridsome
+# Página web para Telebyte S.A. de C.V.
 
-This is the project you get when you run `gridsome create new-project`.
+### Ver el proyecto de forma local
+Para correr este proyecto de forma local corre los comandos comando: 
+`yarn install`
+`yarn run dev`
 
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+### Modificar el contenido 
+Entra a [GraphCMS](https://app.graphcms.com/) y modifica el contenido.
