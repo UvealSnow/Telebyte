@@ -22,7 +22,6 @@ extend('required',{
 
 export default function (Vue, { head }) {
   // Set default layout as a global component
-  Vue.use(Toast);
 
   Vue.component('Icon', Icon);
   Vue.component('Layout', DefaultLayout);
