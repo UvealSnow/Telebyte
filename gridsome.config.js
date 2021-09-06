@@ -53,6 +53,10 @@ module.exports = {
     },
   },
 
+  modules: [
+    "vue-toastification/nuxt",
+  ],
+
   chainWebpack: config => {
     const svgRule = config.module.rule('svg');
     svgRule.uses.clear();

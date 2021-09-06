@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       padding: ['first'],
       borderWidth: ['first'],
+      opacity: ['disabled'],
     },
   },
   plugins: [],
