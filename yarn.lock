@@ -3479,6 +3479,11 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
+
 dotenv@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
@@ -9618,6 +9623,11 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+vee-validate@^3.4.12:
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-3.4.12.tgz#a268f34b712ac8a2f951544ff4cc14d9808212f0"
+  integrity sha512-mKYlbLmnKVj6zQ4pWBpOEQhc4rcee+wYy2IuMJEuH4Omx31g62YRVnjO3DMeWz7kAQN8z11UwHTY5s75gAGzRw==
 
 vendors@^1.0.0:
   version "1.0.4"

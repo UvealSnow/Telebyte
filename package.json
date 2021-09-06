@@ -9,12 +9,14 @@
   "dependencies": {
     "@gridsome/source-graphql": "^0.1.0",
     "gridsome": "^0.7.0",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "vee-validate": "^3.4.12"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/postcss7-compat": "^2.2.9",
     "autoprefixer": "^9",
+    "dotenv": "^10.0.0",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "node-sass": "^6.0.1",
     "postcss": "^7",
