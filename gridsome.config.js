@@ -38,7 +38,7 @@ module.exports = {
     {
       use: '@gridsome/source-graphql',
       options: {
-        url: 'https://api-us-east-1.graphcms.com/v2/cksprroxl2ulp01y25dh9e078/master',
+        url: process.env.GRAPH_CMS_URL,
         fieldName: 'gcms',
         typeName: 'gcmsTypes',
       },
@@ -52,6 +52,10 @@ module.exports = {
       },
     },
   },
+
+  modules: [
+    "vue-toastification/nuxt",
+  ],
 
   chainWebpack: config => {
     const svgRule = config.module.rule('svg');

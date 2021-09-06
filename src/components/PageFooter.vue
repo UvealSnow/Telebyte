@@ -6,37 +6,7 @@
           <span class="font-bold">Envíanos</span> un mensaje
         </h3>
 
-        <form action="#" class="pt-8">
-          <div class="input pb-4">
-            <label for="name" class="block font-bold text-xs pb-2">Nombre completo</label>
-            <input
-              class="border rounded border-gray-300 w-full p-1"
-              id="name"
-              type="text"
-              autocomplete="off"
-              v-model="formData.name"
-            >
-          </div>
-          <div class="input pb-4">
-            <label for="email" class="block font-bold text-xs pb-2">Email</label>
-            <input
-              class="border rounded border-gray-300 w-full p-1"
-              id="email"
-              type="email"
-              autocomplete="off"
-              v-model="formData.email"
-            >
-          </div>
-          <div class="input pb-4">
-            <label for="message" class="block font-bold text-xs pb-2">Tu mensaje</label>
-            <textarea
-              class="border rounded border-gray-300 h-32 w-full p-1"
-              name="message"
-              v-model="formData.message"
-            />
-          </div>
-          <button class="btn w-64 py-4 rounded-full text-white font-bold text-sm">ENVIAR MENSAJE</button>
-        </form>
+        <contact-form class="pt-8" />
       </div>
       <div class="footer__contact--right hidden lg:block border-l border-gray-300 py-12 px-8 w-2/5">
         <h3 class="text-2xl text-black pb-6">
@@ -91,6 +61,7 @@
 
 <script>
 import HeaderCta from './HeaderCta.vue';
+import ContactForm from './ContactForm.vue';
 
 export default {
   props: {
@@ -103,6 +74,7 @@ export default {
 
   components: {
     HeaderCta,
+    ContactForm,
   },
 
   data: () => ({
@@ -130,11 +102,6 @@ export default {
         key: 'schedule',
       },
     ],
-    formData: {
-      name: '',
-      email: '',
-      message: '',
-    },
   }),
 
   computed: {
