@@ -1,5 +1,5 @@
 <template>
-  <div class="projects container mx-auto flex flex-col mt-24">
+  <div id="proyectos" class="projects container mx-auto flex flex-col mt-24">
     <p class="subtitle">{{ section.subtitle }}</p>
     <h3 class="title">{{ section.title }}</h3>
 

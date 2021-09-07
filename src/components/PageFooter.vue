@@ -6,7 +6,7 @@
           <span class="font-bold">Envíanos</span> un mensaje
         </h3>
 
-        <contact-form class="pt-8" />
+        <contact-form id="contactanos" class="pt-8" />
       </div>
       <div class="footer__contact--right hidden lg:block border-l border-gray-300 py-12 px-8 w-2/5">
         <h3 class="text-2xl text-black pb-6">

@@ -71,11 +71,11 @@ export default {
       },
     ],
     links: [
-      { label: 'INICIO', linkTo: '' },
-      { label: 'SERVICIOS', linkTo: '' },
-      { label: 'GALERÍA', linkTo: '' },
-      { label: 'TESTIMONIOS', linkTo: '' },
-      { label: 'CONTÁCTANOS', linkTo: '' },
+      { label: 'INICIO', linkTo: '/' },
+      { label: 'SERVICIOS', linkTo: '/#servicios' },
+      { label: 'GALERÍA', linkTo: '/#proyectos' },
+      { label: 'TESTIMONIOS', linkTo: '/#testimonios' },
+      { label: 'CONTÁCTANOS', linkTo: '#contactanos' },
     ],
   }),
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-2xl mx-auto mt-24 mb-80 relative">
+  <div id="testimonios" class="max-w-screen-2xl mx-auto mt-24 mb-80 relative">
     <div class="cool-bg">
       <div class="polygon"></div>
     </div>
