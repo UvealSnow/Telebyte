@@ -2,14 +2,23 @@
   <div class="hero">
     <div class="stripe"></div>
     <div class="hero__content absolute text-center">
-      <p class="text-gray-300 uppercase font-bold text-xs">{{ section.subtitle }}</p>
-      <h1 class="text-white uppercase font-bold text-lg md:text-3xl lg:text-5xl">{{ section.title }}</h1>
+      <p
+        v-if="section.subtitle"
+        v-text="section.subtitle"
+        class="text-gray-300 uppercase font-bold text-xs"
+      />
+      <h1
+        v-if="section.title"
+        v-text="section.title"
+        class="text-white uppercase font-bold text-lg md:text-3xl lg:text-5xl"
+      />
       <a
         v-if="section.slug"
         v-text="section.actionText"
         :href="section.slug"
         class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4 uppercase"
       />
+      <span v-else class="my-12 w-full h-8 block" />
     </div>
   </div>
 </template>
