@@ -18,7 +18,7 @@
         :href="section.slug"
         class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4 uppercase"
       />
-      <span v-else class="my-12 w-full h-8 block" />
+      <span v-else class="my-10 w-full h-8 block" />
     </div>
   </div>
 </template>
