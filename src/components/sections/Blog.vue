@@ -42,7 +42,7 @@ export default {
       thumbnail {
         url
       }
-      publishedBy {
+      createdBy {
         name
       }
       tags {
