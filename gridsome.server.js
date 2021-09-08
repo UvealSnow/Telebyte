@@ -19,6 +19,12 @@ module.exports = function (api) {
           projects {
             slug
           }
+          services {
+            slug
+          }
+          posts {
+            slug
+          }
         }
       }
     `);
@@ -31,6 +37,26 @@ module.exports = function (api) {
           slug: node.slug,
         },
       });
+    });
+
+    data.gcms.services.forEach(node => {
+      createPage({
+        path: `/services/${node.slug}`,
+        component: './src/templates/Service.vue',
+        context: {
+          slug: node.slug,
+        },
+      })
+    });
+
+    data.gcms.posts.forEach(node => {
+      createPage({
+        path: `/posts/${node.slug}`,
+        component: './src/templates/Post.vue',
+        context: {
+          slug: node.slug,
+        },
+      })
     });
   });
 }

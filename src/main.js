@@ -7,8 +7,11 @@ require('~/assets/scss/main.scss');
 import Icon from '~/components/atoms/Icon.vue';
 import DefaultLayout from '~/layouts/Default.vue';
 
+import * as moment from 'moment';
 import { extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
+
+moment.locale('es');
 
 extend('email', {
   ...email,
