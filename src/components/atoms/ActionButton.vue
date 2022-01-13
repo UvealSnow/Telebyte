@@ -3,6 +3,7 @@
     :is="href ? 'a' : 'button'"
     :href="href"
     class="action-button"
+    :disabled="disabled"
     :class="`action-button--${style}`"
     @click="$emit(events.CLICK)"
   >
@@ -21,6 +22,11 @@ export default {
     style: {
       type: String,
       default: 'primary',
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 

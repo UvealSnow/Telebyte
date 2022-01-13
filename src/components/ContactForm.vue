@@ -50,24 +50,32 @@
         </div>
       </validation-provider>
       <div class="g-recaptcha" :data-sitekey="envVars.recaptchaPublic"></div>
-      <button
+
+      <div class="w-full md:w-60">
+        <action-button class="uppercase" :disabled="!valid">
+          Enviar mensaje
+        </action-button>
+      </div>
+      <!-- <button
         :disabled="!valid"
         type="submit"
         class="bg-telebyte-green w-64 py-4 mt-4 rounded-full text-white font-bold text-sm disabled:opacity-50"
       >
         ENVIAR MENSAJE
-      </button>
+      </button> -->
     </form>
   </validation-observer>
 </template>
 
 <script>
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
+import ActionButton from '~/components/atoms/ActionButton.vue';
 
 export default {
   components: {
     ValidationObserver,
     ValidationProvider,
+    ActionButton,
   },
 
   data: () => ({
