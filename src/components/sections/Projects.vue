@@ -78,10 +78,10 @@ export default {
 
 <style lang="scss">
 .projects {
-  @apply container mx-auto flex flex-col mt-24;
+  @apply container mx-auto flex flex-col mt-24 px-8;
 
   &__container {
-    @apply grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8;
+    @apply grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
   }
 }
 </style>
