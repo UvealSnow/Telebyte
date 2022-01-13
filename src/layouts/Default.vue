@@ -1,5 +1,5 @@
 <template>
-  <div class="layout font-body min-h-screen">
+  <div class="layout">
     <page-header :contact-data="computedContactData" />
     <slot/>
     <page-footer :contact-data="computedContactData" />
@@ -42,3 +42,8 @@ query {
 }
 </static-query>
 
+<style lang="scss">
+.layout {
+  @apply font-body min-h-screen overflow-x-hidden;
+}
+</style>

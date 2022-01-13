@@ -55,7 +55,8 @@ export default {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url('../../assets/img/hero-bg.png');
 
   &__text {
-    @apply text-center z-10 text-white uppercase font-bold;
+    @apply text-center text-white uppercase font-bold
+      px-8 z-10;
   }
 
   &__content {

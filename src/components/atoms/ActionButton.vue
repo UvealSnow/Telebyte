@@ -34,7 +34,8 @@ export default {
 
 <style lang="scss">
 .action-button {
-  @apply font-bold text-sm 
+  @apply font-bold block
+    text-xs md:text-sm lg:text-base
     w-full py-4 px-8 mt-4
     rounded-full
     disabled:opacity-50;
