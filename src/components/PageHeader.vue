@@ -97,7 +97,7 @@ query {
 
 <style lang="scss" scoped>
 .page-header {
-  @apply container mx-auto flex-col  bg-gray-800 z-50
+  @apply container mx-auto flex-col bg-gray-900 z-50
     py-3 md:px-8
     md:fixed;
 }

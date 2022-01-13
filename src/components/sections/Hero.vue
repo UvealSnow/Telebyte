@@ -11,17 +11,19 @@
       <h1
         v-if="section.title"
         v-text="section.title"
-        class="text-lg md:text-3xl lg:text-5xl max-w-4xl"
+        class="text-2xl md:text-3xl lg:text-5xl md:max-w-lg lg:max-w-4xl"
       />
 
-      <ActionButton
-        v-if="section.slug"
-        :href="section.slug"
-      >
-        {{ section.actionText }}
-      </ActionButton>
+      <div class="w-3/4 md:w-2/5 max-w-xs mx-auto">
+        <ActionButton
+          v-if="section.slug"
+          :href="section.slug"
+        >
+          {{ section.actionText }}
+        </ActionButton>
+        <span v-else class="my-10 w-full h-8 block" />
+      </div>
 
-      <span v-else class="my-10 w-full h-8 block" />
       </div>
     </div>
   </div>
