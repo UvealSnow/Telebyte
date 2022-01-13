@@ -1,6 +1,6 @@
 <template>
-  <div class="testimony flex flex-col">
-    <div class="testimony__controls flex flex-row w-60 mx-auto items-center">
+  <div class="testimony">
+    <div class="testimony__controls">
       <icon class="cursor-pointer" size="xl" image="chevron-left" />
       <div class="flex-grow">
         <img class="w-14 mx-auto" :src="testimony.clientPicture.url" :alt="testimony.clientName">
@@ -8,7 +8,7 @@
       <icon class="cursor-pointer" size="xl" image="chevron-right" />
     </div>
 
-    <p class="text-xs w-5/12 mx-auto leading-loose my-8" v-text="testimony.review" />
+    <p class="testimony__review" v-text="testimony.review" />
 
     <p class="text-xs font-bold" v-text="`- ${testimony.clientName}`" />
   </div>
@@ -25,3 +25,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.testimony {
+  @apply flex flex-col;
+
+  &__controls {
+    @apply  flex flex-row w-60 mx-auto items-center;
+  }
+
+  &__review {
+    @apply text-xs w-10/12 md:w-7/12 lg:w-5/12 mx-auto leading-loose my-8;
+  }
+}
+</style>

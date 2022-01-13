@@ -1,9 +1,9 @@
 <template>
-  <div id="proyectos" class="projects container mx-auto flex flex-col mt-24">
+  <div id="proyectos" class="projects">
     <p class="subtitle">{{ section.subtitle }}</p>
     <h3 class="title">{{ section.title }}</h3>
 
-    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="projects__container">
       <project
         v-for="(project, i) in projects"
         :project="project"
@@ -75,3 +75,13 @@ export default {
   }
 }
 </static-query>
+
+<style lang="scss">
+.projects {
+  @apply container mx-auto flex flex-col mt-24 px-8;
+
+  &__container {
+    @apply grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+}
+</style>

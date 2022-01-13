@@ -1,10 +1,10 @@
 <template>
-  <div id="testimonios" class="max-w-screen-2xl mx-auto mt-24 mb-80 relative">
+  <div id="testimonios" class="testimonies">
     <div class="cool-bg">
       <div class="polygon"></div>
     </div>
 
-    <div class="testimonies container mx-auto text-center bg-white shadow-lg rounded-sm p-10">
+    <div class="testimonies__container">
       <p class="subtitle text-center">{{ section.subtitle }}</p>
       <h3 class="title text-center">{{ section.title }}</h3>
 
@@ -49,7 +49,7 @@ export default {
 }
 </static-query>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $bg-height: 440px;
 
 .cool-bg {
@@ -71,8 +71,13 @@ $bg-height: 440px;
 }
 
 .testimonies {
-  top: 45%; left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
+  @apply w-full mx-auto mt-24 mb-80 relative;
+
+  &__container {
+    @apply text-center w-10/12 mx-auto bg-white shadow-lg rounded-sm p-10;
+    top: 45%; left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
 }
 </style>

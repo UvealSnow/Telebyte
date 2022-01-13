@@ -3,10 +3,7 @@
     <img class="post__thumbnail" :src="post.thumbnail.url" :alt="post.title">
     
     <div class="post__body p-8">
-      <div class="flex flex-row text-xs justify-between select-none">
-        <p>por <span class="font-bold" v-text="writtenBy" /></p>
-        <p v-text="publishedAt" />
-      </div>
+      <post-info :post="post" />
 
       <g-link :to="`/posts/${post.slug}`">
         <h2 class="text-4xl font-bold my-4 hover:text-telebyte-green duration-300" v-text="post.title" />
@@ -25,35 +22,23 @@
         :key="i"
       />
     </div>
-
-    <!-- <g-link class="block text-center" to="posts">ver más</g-link> -->
   </div>
 </template>
 
 <script>
-import * as moment from 'moment';
+import PostInfo from './PostInfo.vue';
 
 export default {
+  components: {
+    PostInfo,
+  },
+
   props: {
     post: {
       required: true,
       type: Object,
       default: () => ({}),
     }
-  },
-
-  created() {
-    moment.locale('es');
-  },
-
-  computed: {
-    writtenBy() {
-      return this.post.publishedBy.name.replace(' ', '_').toLowerCase();
-    },
-
-    publishedAt() {
-      return moment(this.post.publishedAt).format('LL');
-    },
   },
 };
 </script>

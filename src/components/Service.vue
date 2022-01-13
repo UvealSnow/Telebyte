@@ -1,10 +1,5 @@
 <template>
-  <div class="
-    flex flex-col
-    border-gray-300
-    pl-10 pb-6
-    lg:pb-0 lg:first:pl-0 lg:border-l md:first:border-l-0
-  ">
+  <div class="service">
     <icon
       color="black"
       size="xl"
@@ -33,3 +28,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.service {
+  @apply flex flex-col
+    lg:pl-6
+    border-gray-300 lg:border-l md:first:border-l-0;
+}
+</style>
