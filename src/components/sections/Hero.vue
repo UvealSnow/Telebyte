@@ -1,30 +1,40 @@
 <template>
   <div class="hero">
     <div class="stripe"></div>
-    <div class="hero__content absolute text-center">
-      <p
+    <div class="hero__content">
+      <div class="hero__text">
+        <p
         v-if="section.subtitle"
         v-text="section.subtitle"
-        class="text-gray-300 uppercase font-bold text-xs"
+        class="text-gray-300 text-xs"
       />
       <h1
         v-if="section.title"
         v-text="section.title"
-        class="text-white uppercase font-bold text-lg md:text-3xl lg:text-5xl"
+        class="text-lg md:text-3xl lg:text-5xl max-w-4xl"
       />
-      <a
+
+      <ActionButton
         v-if="section.slug"
-        v-text="section.actionText"
         :href="section.slug"
-        class="block shadow max-w-xs mx-auto bg-white text-xs font-bold rounded-full px-6 py-3 mt-4 uppercase"
-      />
+      >
+        {{ section.actionText }}
+      </ActionButton>
+
       <span v-else class="my-10 w-full h-8 block" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ActionButton from '~/components/atoms/ActionButton.vue';
+
 export default {
+  components: {
+    ActionButton,
+  },
+
   props: {
     section: {
       Object,
@@ -35,30 +45,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .hero {
+  @apply relative;
   height: 630px;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url('../../assets/img/hero-bg.png');
 
+  &__text {
+    @apply text-center z-10 text-white uppercase font-bold;
+  }
+
   &__content {
-    top: 50%;
-    left: 50%;
-
-    width: 100vw;
-    transform: translate(-50%, 0%);
-
-    @screen md {
-      width: 650px;
-      transform: translate(-50%, -100%);
-    }
-
-    @screen lg {
-      width: 1000px;
-      transform: translate(-50%, -100%);
-    }
+    top: 0;
+    @apply flex absolute justify-center items-center w-screen h-full;
   }
   
   .stripe {
