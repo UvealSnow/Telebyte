@@ -4,7 +4,7 @@
     :href="href"
     class="action-button"
     :disabled="disabled"
-    :class="`action-button--${style}`"
+    :class="`action-button--${type}`"
     @click="$emit(events.CLICK)"
   >
     <slot />
@@ -19,7 +19,7 @@ export default {
       default: null,
     },
 
-    style: {
+    type: {
       type: String,
       default: 'primary',
     },
