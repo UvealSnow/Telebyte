@@ -10,7 +10,7 @@
     "@gridsome/source-graphql": "^0.1.0",
     "axios": "^0.21.3",
     "gridsome": "^0.7.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "vee-validate": "^3.4.12"
   },
   "devDependencies": {
