@@ -40,7 +40,19 @@ export default {
       title
       publishedAt
       thumbnail {
-        url
+        url(transformation: {
+          document: {
+            output: {
+              format: webp
+            }
+          }
+          image: {
+            resize: {
+              width: 400
+              height: 260
+            }
+          }
+        })
       }
       createdBy {
         name

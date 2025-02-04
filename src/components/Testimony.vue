@@ -3,7 +3,7 @@
     <div class="testimony__controls">
       <icon class="cursor-pointer" size="xl" image="chevron-left" />
       <div class="flex-grow">
-        <img class="w-14 mx-auto" :src="testimony.clientPicture.url" :alt="testimony.clientName">
+        <img class="w-14 mx-auto" :src="clientPicture" :alt="testimony.clientName">
       </div>
       <icon class="cursor-pointer" size="xl" image="chevron-right" />
     </div>
@@ -21,6 +21,14 @@ export default {
       type: Object,
       required: true,
       default: () => ({}),
+    },
+  },
+  computed: {
+    clientPicture() {
+      const { url } = this.testimony.clientPicture;
+      const arr = url.split('/');
+      arr.splice(arr.length - 1, 0, 'quality=value:50');
+      return arr.join('/');
     },
   },
 };
