@@ -25,9 +25,22 @@ module.exports = function (api) {
           posts {
             slug
           }
+          pages {
+            slug
+          }
         }
       }
     `);
+
+    data.gcms.pages.forEach(node => {
+      createPage({
+        path: `/${node.slug}`,
+        component: './src/templates/Page.vue',
+        context: {
+          slug: node.slug,
+        },
+      })
+    });
 
     data.gcms.projects.forEach(node => {
       createPage({
