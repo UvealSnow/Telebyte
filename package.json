@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@gridsome/source-graphql": "^0.1.0",
-    "axios": "^0.21.3",
+    "axios": "^1.7.9",
     "gridsome": "^0.7.0",
     "moment": "^2.29.1",
     "vee-validate": "^3.4.12"
@@ -24,5 +24,6 @@
     "sass-loader": "^10.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-svg-loader": "^0.16.0"
-  }
+  },
+  "version": "1.22.22"
 }
