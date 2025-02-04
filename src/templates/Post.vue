@@ -3,7 +3,7 @@
     <div class="text-lg font-light">
       <div
         class="project__bg bg-cover bg-center bg-no-repeat w-full"
-        :style="`background-image: url(${post.thumbnail.url})`"
+        :style="`background-image: url(${thumbnail})`"
       />
 
       <div class="container mx-auto my-24">
@@ -27,6 +27,13 @@ export default {
     post() {
       return this.$page.gcms.post;
     },
+
+    thumbnail() {
+      const { url } = this.post.thumbnail;
+      const arr = url.split('/');
+      arr.splice(arr.length - 1, 0, 'quality=value:50');
+      return arr.join('/');
+    },
   },
 };
 </script>
@@ -41,7 +48,19 @@ query getPost($slug: String) {
         html
       }
       thumbnail {
-        url
+        url(transformation: {
+          document: {
+            output: {
+              format: webp
+            }
+          }
+          image: {
+            resize: {
+              width: 400
+              height: 260
+            }
+          }
+        })
       }
       createdBy {
         name

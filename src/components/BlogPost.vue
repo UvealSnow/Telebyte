@@ -1,6 +1,6 @@
 <template>
   <div class="post shadow-xl rounded text-gray-700">
-    <img class="post__thumbnail" :src="post.thumbnail.url" :alt="post.title">
+    <img class="post__thumbnail" :src="thumbnail" :alt="post.title">
     
     <div class="post__body p-8">
       <post-info :post="post" />
@@ -40,6 +40,15 @@ export default {
       default: () => ({}),
     }
   },
+
+  computed: {
+    thumbnail() {
+      const { url } = this.post.thumbnail;
+      const arr = url.split('/');
+      arr.splice(arr.length - 1, 0, 'quality=value:50');
+      return arr.join('/');
+    },
+  }
 };
 </script>
 
