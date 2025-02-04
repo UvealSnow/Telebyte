@@ -42,7 +42,19 @@ export default {
       clientName
       review
       clientPicture {
-        url
+        url(transformation: {
+          document: {
+            output: {
+              format: webp
+            }
+          }
+          image: {
+            resize: {
+              width: 60
+              height: 60
+            }
+          }
+        })
       }
     }
   }
