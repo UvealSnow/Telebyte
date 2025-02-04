@@ -1,7 +1,7 @@
 <template>
   <div
     class="project bg-no-repeat bg-center bg-cover"
-    :style="`background-image: url('${project.image.url}')`"
+    :style="`background-image: url('${image}')`"
   >
     <div class="project__container flex flex-col justify-center items-center w-full h-full transition-all duration-300">
       <p v-text="project.title" class="text-gray-300 text-xs uppercase -mb-2" />
@@ -21,6 +21,14 @@ export default {
       type: Object,
       required: true,
       default: () => ({}),
+    },
+  },
+  computed: {
+    image() {
+      const { url } = this.project.image;
+      const arr = url.split('/');
+      arr.splice(arr.length - 1, 0, 'quality=value:50');
+      return arr.join('/');
     },
   },
 };

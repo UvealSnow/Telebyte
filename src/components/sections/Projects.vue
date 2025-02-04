@@ -58,7 +58,19 @@ export default {
       featured
       updatedAt
       image {
-        url
+        url(transformation: {
+          document: {
+            output: {
+              format: webp
+            }
+          }
+          image: {
+            resize: {
+              width: 470
+              height: 320
+            }
+          }
+        })
       }
     }
     regularProjects: projects(where: { featured: false }, orderBy: createdAt_DESC, first: 6) {
@@ -69,7 +81,19 @@ export default {
       updatedAt
       featured
       image {
-        url
+        url(transformation: {
+          document: {
+            output: {
+              format: webp
+            }
+          }
+          image: {
+            resize: {
+              width: 470
+              height: 320
+            }
+          }
+        })
       }
     }
   }
