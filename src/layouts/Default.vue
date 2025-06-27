@@ -18,6 +18,7 @@ export default {
 
   computed: {
     computedContactData() {
+      console.log(this.$static.gcms.contacts[0])
       return this.$static.gcms.contacts[0];
     },
   },
@@ -37,6 +38,8 @@ query {
       phoneAction
       address
       schedule
+      whatsApp
+      whatsappAction
     }
   }
 }
