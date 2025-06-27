@@ -17,7 +17,7 @@
             class="ml-8"
             :class="cta.class"
           >
-            <a v-if="cta.linkTo" :href="cta.linkTo" class="text-xs text-white" v-text="contactData[cta.key]" />
+            <a v-if="cta.linkTo" :href="contactData[cta.linkTo]" class="text-xs text-white" v-text="contactData[cta.key]" />
             <p v-else class="text-xs text-white" v-text="contactData[cta.key]" />
           </header-cta>
         </div>
@@ -73,6 +73,12 @@ export default {
         key: 'schedule',
         class: 'flex md:hidden lg:flex'
       },
+      {
+        icon: 'whatsapp',
+        title: 'Contáctanos por WhatsApp',
+        key: 'whatsApp',
+        linkTo: 'whatsappAction',
+      }
     ],
     links: [
       { label: 'INICIO', linkTo: '/' },

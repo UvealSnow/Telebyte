@@ -21,7 +21,7 @@
           class="text-black py-2"
           :title="cta.title"
         >
-          <a v-if="cta.linkTo" :href="cta.linkTo" v-text="contactData[cta.key]" />
+          <a v-if="cta.linkTo" :href="contactData[cta.linkTo]" v-text="contactData[cta.key]" />
           <p v-else v-text="contactData[cta.key]" />
         </header-cta>
       </div>
@@ -45,14 +45,14 @@
             <h3 class="text-2xl uppercase text-white font-bold pb-4">contáctanos</h3>
 
             <header-cta v-for="(cta, i) in ctas" :icon="cta.icon" color="white" :key="i" class="text-white py-1">
-              <a v-if="cta.linkTo" :href="cta.linkTo" v-text="contactData[cta.key]" />
+              <a v-if="cta.linkTo" :href="contactData[cta.linkTo]" v-text="contactData[cta.key]" />
               <p v-else v-text="contactData[cta.key]" />
             </header-cta>
           </div>
         </div>
       </div>
       <div class="footer__credits text-white text-xs p-8">
-        <p>Hecho por <a href="https://kevinavila.pro" class="">@UvealSnow</a></p>
+        <p>Hecho por <a href="https://kevinavila.pro">@UvealSnow</a></p>
         <p>© Telebyte, {{ currentYear }}</p>
       </div>
     </footer>
